@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs</title>
+    <style>
+        body {
+           font-size:12pt;
+           font-family:verdana;
+        }
+        .banner {
+            background-color:navy;
+            color:white;
+            font-family:Arial;
+            font-size:30pt;
+        }
+
+    </style>
+</head>
+<body>
+<div class="banner">JOBS</div>
+<table style="width:100%;height:800px">
+    <tr>
+        <td style="width:15%;background-color:#eeeeee" valign="top">
+            <a href="/hr/jobs/list">List</a>
+            <p/>
+            <a href="/hr/jobs/add">Add</a>
+            <p/>
+            <a href="/hr/jobs/search">Search</a>
+        </td>
+        <td valign="top">
+            {% block body %}
+            {% endblock %}
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
