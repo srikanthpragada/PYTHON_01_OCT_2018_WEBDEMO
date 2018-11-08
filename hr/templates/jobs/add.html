@@ -1,0 +1,19 @@
+{% extends "jobs/base.html" %}
+{% block body %}
+<h1>Add Job</h1>
+<form method="post">
+    {% csrf_token %}
+    Job Id <br/>
+    <input type="text" name="jobid" value="{{jobid}}" required />
+    <p/>
+    Job Title <br/>
+    <input type="text" name="jobtitle" value="{{jobtitle}}"  required />
+    <p/>
+    Min Salary <br/>
+    <input type="number" name="minsal" value="{{minsal}}" required />
+    <p/>
+    <input type="submit" value="Add Job" />
+</form>
+<h4>{{message}}</h4>
+
+{% endblock %}
