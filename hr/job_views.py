@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import sqlite3
 
@@ -44,5 +44,9 @@ def add_job(request):
 def search_jobs(request):
     pass
 
-def delete_job(request):
-    pass
+def delete_job(request,jobid):
+    print("Job id ", jobid)
+    return  render(request, 'jobs/delete.html',
+                   {'message' : f"Job [{jobid}] has been deleted!"})
+    # delete job with given jobid from JOBS table
+    # return redirect('/hr/jobs/list')

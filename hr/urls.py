@@ -8,5 +8,5 @@ urlpatterns = [
     path('about/', views.about),
     path('jobs/list', job_views.list_jobs),
     path('jobs/add', job_views.add_job),
-    path('jobs/delete', job_views.delete_job),
+    path('jobs/delete/<jobid>/', job_views.delete_job),
 ]
