@@ -1,0 +1,14 @@
+{% extends "jobs/base.html" %}
+{% block body %}
+<h1>Edit Job</h1>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <p></p>
+    <input type="submit" value="Update" />
+</form>
+<h4>{{message}}</h4>
+
+{% endblock %}
