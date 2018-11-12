@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import views, job_views
+from . import views, job_views, country_views
 
 urlpatterns = [
     path('welcome/', views.welcome),
@@ -10,4 +10,9 @@ urlpatterns = [
     path('jobs/edit/<jobid>', job_views.edit_job),
     path('jobs/add_form', job_views.add_job_form),
     path('jobs/delete/<jobid>/', job_views.delete_job),
+    path('selectcountry', country_views.select_country),
+    path('savecountry', country_views.save_country),
+    path('showcountryinfo', country_views.show_country_info),
+
+
  ]

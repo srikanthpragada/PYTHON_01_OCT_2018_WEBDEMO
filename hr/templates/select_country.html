@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Country</title>
+</head>
+<body>
+<h2>Select Country</h2>
+<form action="savecountry" method="post">
+    {% csrf_token %}
+    Country <select name="code">
+    <option value="IND">India</option>
+    <option value="AUS">Australia</option>
+    <option value="USA">America</option>
+    <option value="SGN">Singapore</option>
+</select>
+    <p/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
