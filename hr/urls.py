@@ -13,6 +13,7 @@ urlpatterns = [
     path('selectcountry', country_views.select_country),
     path('savecountry', country_views.save_country),
     path('showcountryinfo', country_views.show_country_info),
+    path('languages', views.languages),
 
 
  ]
