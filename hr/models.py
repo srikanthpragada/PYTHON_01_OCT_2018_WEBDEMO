@@ -16,4 +16,4 @@ class Book(models.Model):
     price = models.IntegerField()
 
     def __str__(self):
-        return f"{self.title},{self.author},{self.price}"
+        return f"{self.id},{self.title},{self.author},{self.price}"

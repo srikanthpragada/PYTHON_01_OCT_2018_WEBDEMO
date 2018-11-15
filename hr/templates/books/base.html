@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}"/>
+</head>
+<body>
+<div class="banner">Books</div>
+<div class="menu">
+    <a href="/hr/books/list">List</a>
+    &nbsp;
+    <a href="/hr/books/add">Add</a>
+    &nbsp;
+    <a href="/hr/books/search">Search</a>
+</div>
+<p></p>
+{% block body %}
+{% endblock %}
+
+
+</body>
+</html>

@@ -88,7 +88,7 @@ def add_job_form(request):
             f = AddJobForm()
 
     # Common for GET and POST
-    return render(request, 'jobs/add_form.html',
+    return render(request, 'jobs/add.html',
                   {'message': message,
                    'form': f})
 
