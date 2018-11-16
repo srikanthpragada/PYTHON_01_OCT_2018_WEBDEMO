@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import CompanyInfo
+from datetime import datetime
 
 
 # Create your views here.
@@ -25,4 +26,13 @@ def languages(request):
         langs.append(lang)
         request.session["langs"] = langs
 
-    return render(request,"languages.html", {"langs" : langs})
+    return render(request, "languages.html", {"langs": langs})
+
+
+def ajax_demo(request):
+    return render(request, 'ajax_demo.html')
+
+
+def ajax_time(request):
+    ct = datetime.now().strftime("%H:%M:%S")
+    return HttpResponse(ct)

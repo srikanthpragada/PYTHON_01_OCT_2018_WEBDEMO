@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function getTime() {
+            // make ajax request to get time from server
+            $.get("/hr/time",{},showTime); // get(url,data,callback)
+        }
+        function showTime(resp) {
+            $("#time").text(resp)
+        }
+    </script>
+</head>
+<body>
+<h1>Ajax Demo</h1>
+<h2 id="time" style="color:red"></h2>
+<button onclick="getTime()">Show Time</button>
+
+</body>
+</html>

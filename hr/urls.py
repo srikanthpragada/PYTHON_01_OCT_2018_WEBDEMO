@@ -18,6 +18,7 @@ urlpatterns = [
     path('books/add', book_views.add_book),
     path('books/delete/<bookid>/', book_views.delete_book),
     path('books/edit/<bookid>', book_views.edit_book),
-
+    path('ajax_demo', views.ajax_demo),
+    path('time', views.ajax_time),
 
  ]
