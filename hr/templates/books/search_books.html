@@ -1,0 +1,57 @@
+{% extends "books/base.html" %}
+{% block body %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+        function searchBooks() {
+            // make ajax request to get time from server
+            $.get("/hr/books/search_books",{'title' : $("#title").val()},showBooks); // get(url,data,callback)
+        }
+        function showBooks(books) {
+
+            $("#books").html("");  // clear existing content
+            $("#booksTable").show()
+            // process each book in books array
+            $.each(books,
+              function(idx,book) {
+                  // add a table row to tbody for each book
+                  row = "<tr><td>" +
+                     book.id + "</td><td>" +
+                     book.title + "</td><td>" +
+                     book.author + "</td><td>" +
+                     book.price + "</td><td style='text-align:center'>" +
+                     "<a href='/hr/books/edit/" + book.id  + "'>Edit</a> &nbsp;" +
+                     "<a onclick='return confirm(\"Do you want to delete\")'  href='/hr/books/delete/"
+                           + book.id  + "'>Delete</a>" +
+                     "</td></tr>";
+
+                  $("#books").append(row)
+              }
+            );
+        }
+
+
+</script>
+<h1>Search Books</h1>
+Title <input type="text" id="title"/>
+<input type="button" value="Search" onclick="searchBooks()"/>
+<p/>
+
+<table id="booksTable" border="1" cellpadding="5px" width="100%"
+       style="display:none">
+    <thead>
+    <tr>
+        <th>Book ID</th>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody id="books">
+    </tbody>
+
+</table>
+
+
+{% endblock %}

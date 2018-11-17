@@ -1,21 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .forms import BookForm, AddJobForm
 from .models import Book
 import sqlite3
-
-
-def get_job(id):
-    con = sqlite3.connect(r"e:\classroom\python\oct1\hr.db")
-    cur = con.cursor()
-    try:
-        cur.execute("select * from jobs where job_id = ?", (id,))
-        job = cur.fetchone()
-        return job
-    except:
-        return None
-    finally:
-        con.close()
 
 
 def list_books(request):
@@ -23,8 +10,16 @@ def list_books(request):
                   {'books': Book.objects.all()})
 
 
-def search_jobs(request):
-    pass
+def search_books(request):
+    title = request.GET["title"]
+    books = Book.objects.filter(title__contains=title).values("id","title", "author", "price")
+    # Convert QuerySet of dict to list of dict
+    books_list = list(books);
+    return JsonResponse(books_list, safe=False)
+
+
+def search_books_form(request):
+    return render(request,'books/search_books.html')
 
 
 def delete_book(request, bookid):
