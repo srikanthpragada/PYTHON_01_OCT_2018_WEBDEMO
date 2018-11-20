@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from . import views, job_views, country_views, book_views, class_views
+from . import views, job_views, country_views, book_views, class_views, rest_views
 
 
 urlpatterns = [
@@ -26,5 +26,7 @@ urlpatterns = [
     path('hello/', class_views.HelloView.as_view()),
     path('hello2/', class_views.HelloView2.as_view()),
     path('listbooks/', class_views.ListBooks.as_view()),
+    path('api/books/', rest_views.list_books),
+    path('api/books/<bookid>', rest_views.get_book),
 
  ]
