@@ -28,5 +28,6 @@ urlpatterns = [
     path('listbooks/', class_views.ListBooks.as_view()),
     path('api/books/', rest_views.list_books),
     path('api/books/<bookid>', rest_views.get_book),
+    path('api/client', rest_views.client),
 
  ]

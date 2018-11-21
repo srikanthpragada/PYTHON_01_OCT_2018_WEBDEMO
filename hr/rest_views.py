@@ -5,15 +5,24 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 
 
+def client(request):
+    return render(request, 'book_client.html')
+
+
 # Supports get
-@api_view(['GET','POST'])
+@api_view(['GET', 'POST'])
 def list_books(request):
     if request.method == "GET":
         books = Book.objects.all()
         serializer = BookSerializer(books, many=True)
         return Response(serializer.data)
     else:
-        pass
+        serializer = BookSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()  # Insert into table
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)  # Bad request
 
 
 @api_view(['GET', 'DELETE', 'PUT'])

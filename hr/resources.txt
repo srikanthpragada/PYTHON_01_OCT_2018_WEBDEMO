@@ -1,0 +1,39 @@
+Python Resources
+=======================
+https://docs.python.org/3/
+Python Documentation - Tutorial 
+
+https://developers.google.com/edu/python/
+Google’s Python Classes
+
+https://www.tutorialspoint.com/python/
+Python tutorials from TutorialsPoint.Com
+
+http://docs.python-guide.org/en/latest/
+Hitchhiker’s Guide to Python 
+
+https://www.jetbrains.com/pycharm/documentation/pycharm-videos.html
+Videos regarding how to use PyCharm
+
+https://realpython.com/
+A lot of useful tutorials and tricks related to Python by Dan Bader and his team
+
+Django Resources 
+========================
+https://docs.djangoproject.com/en/2.0/
+Official Django Documentation
+
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
+Mozilla’s documentation on Django
+
+https://djangobook.com/the-django-book
+A very good book on all important topics of Django
+
+https://simpleisbetterthancomplex.com
+Nice tutorials from Vitor Freitas, Brazil
+
+https://www.fullstackpython.com/django.html
+Links to many tutorials related to Django
+
+https://djangoforbeginners.com
+A book on Django for Beginners
